@@ -3,19 +3,24 @@ const sunIcon = document.getElementById('sun-icon');
 const moonIcon = document.getElementById('moon-icon');
 const logoDark = document.getElementById('logo-dark');
 const logoLight = document.getElementById('logo-light');
+const heroLogoDark = document.getElementById('hero-logo-dark');
+const heroLogoLight = document.getElementById('hero-logo-light');
 const htmlElement = document.documentElement;
 
 function updateVisuals(theme) {
+    const darkEls = [logoDark, heroLogoDark];
+    const lightEls = [logoLight, heroLogoLight];
+
     if (theme === 'light') {
         sunIcon.classList.add('hidden');
         moonIcon.classList.remove('hidden');
-        logoDark.classList.add('hidden');
-        logoLight.classList.remove('hidden');
+        darkEls.forEach(el => el.classList.add('hidden'));
+        lightEls.forEach(el => el.classList.remove('hidden'));
     } else {
         sunIcon.classList.remove('hidden');
         moonIcon.classList.add('hidden');
-        logoDark.classList.remove('hidden');
-        logoLight.classList.add('hidden');
+        darkEls.forEach(el => el.classList.remove('hidden'));
+        lightEls.forEach(el => el.classList.add('hidden'));
     }
 }
 
