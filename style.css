@@ -1,0 +1,102 @@
+:root {
+    --accent-color: #64ffda;
+}
+
+[data-theme="light"] {
+    --accent-color: #0070f3;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Background Animation */
+.coastline-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.4;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.wave {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    width: 200%;
+    height: 250px;
+    background: linear-gradient(to top, var(--accent-color), transparent);
+    mask: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"><path d="M0 0c150 0 150 120 300 120s150-120 300-120 150 120 300 120 150-120 300-120v120h-1200z" fill="black"/></svg>') repeat-x;
+    -webkit-mask: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg"><path d="M0 0c150 0 150 120 300 120s150-120 300-120 150 120 300 120 150-120 300-120v120h-1200z" fill="black"/></svg>') repeat-x;
+    mask-size: 1200px 120px;
+    -webkit-mask-size: 1200px 120px;
+}
+
+@keyframes waveFlow {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.delay-200 { animation-delay: 0.2s; }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Theme specific overrides */
+[data-theme="light"] {
+    --background: #f0f4f8;
+    --foreground: #1a365d;
+}
+
+[data-theme="light"] body {
+    background-color: #f0f4f8;
+    color: #1a365d;
+}
+
+[data-theme="light"] .coastline-bg .wave {
+    opacity: 0.15;
+}
+
+[data-theme="light"] nav {
+    background-color: rgba(240, 244, 248, 0.85);
+    border-color: rgba(0, 112, 243, 0.1);
+}
+
+[data-theme="light"] .logo-container path.text-navy {
+    color: #ffffff;
+}
+
+[data-theme="light"] h1 {
+    background: linear-gradient(to bottom right, #1a365d, #0070f3);
+    -webkit-background-clip: text;
+    background-clip: text;
+}
