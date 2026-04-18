@@ -1,15 +1,21 @@
 const themeToggle = document.getElementById('theme-toggle');
 const sunIcon = document.getElementById('sun-icon');
 const moonIcon = document.getElementById('moon-icon');
+const logoDark = document.getElementById('logo-dark');
+const logoLight = document.getElementById('logo-light');
 const htmlElement = document.documentElement;
 
-function updateIcons(theme) {
+function updateVisuals(theme) {
     if (theme === 'light') {
         sunIcon.classList.add('hidden');
         moonIcon.classList.remove('hidden');
+        logoDark.classList.add('hidden');
+        logoLight.classList.remove('hidden');
     } else {
         sunIcon.classList.remove('hidden');
         moonIcon.classList.add('hidden');
+        logoDark.classList.remove('hidden');
+        logoLight.classList.add('hidden');
     }
 }
 
@@ -24,7 +30,7 @@ function setTheme(theme) {
         document.body.classList.replace('bg-[#f0f4f8]', 'bg-navy');
         document.body.classList.replace('text-[#1a365d]', 'text-[#ccd6f6]');
     }
-    updateIcons(theme);
+    updateVisuals(theme);
     localStorage.setItem('theme', theme);
 }
 

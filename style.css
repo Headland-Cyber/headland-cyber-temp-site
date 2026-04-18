@@ -115,7 +115,3 @@ body {
     background-clip: text;
 }
 
-/* Dark mode logo treatment */
-[data-theme="dark"] #logo {
-    filter: brightness(1.4) drop-shadow(0 0 8px rgba(100, 255, 218, 0.3));
-}
