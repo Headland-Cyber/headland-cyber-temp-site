@@ -75,6 +75,7 @@ body {
 [data-theme="light"] {
     --background: #f0f4f8;
     --foreground: #1a365d;
+    --accent-color: #0d9488;
 }
 
 [data-theme="light"] body {
@@ -88,15 +89,28 @@ body {
 
 [data-theme="light"] nav {
     background-color: rgba(240, 244, 248, 0.85);
-    border-color: rgba(0, 112, 243, 0.1);
+    border-color: rgba(13, 148, 136, 0.15);
 }
 
-[data-theme="light"] .logo-container path.text-navy {
-    color: #ffffff;
+/* Override Tailwind teal classes in light mode */
+[data-theme="light"] .text-teal {
+    color: #0d9488 !important;
+}
+
+[data-theme="light"] .border-teal {
+    border-color: #0d9488 !important;
+}
+
+[data-theme="light"] .border-teal\/10 {
+    border-color: rgba(13, 148, 136, 0.1) !important;
+}
+
+[data-theme="light"] .border-teal\/20 {
+    border-color: rgba(13, 148, 136, 0.2) !important;
 }
 
 [data-theme="light"] h1 {
-    background: linear-gradient(to bottom right, #1a365d, #0070f3);
+    background: linear-gradient(to bottom right, #1a365d, #0d9488);
     -webkit-background-clip: text;
     background-clip: text;
 }
